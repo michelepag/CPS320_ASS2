@@ -1,0 +1,26 @@
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Alert uploaded
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> start
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Alert uploaded
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> start
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Alert uploaded
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> start
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Alert uploaded
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> start
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Alert uploaded
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> start
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Alert uploaded
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> start
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>start
+Too many alerts
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.create_alert(boolean) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! too_many 
+aspects._asp_AlertsLimit0.ajc$before$aspects__asp_AlertsLimit0$3$fe8a53a6(_asp_AlertsLimit0.aj:32)
+main.Runner.main(Runner.java:45) 
+[ALertLimit]AUTOMATON::> ALertLimit() STATE::>too_many
+Delete Alerts
+[ALertLimit]MOVED ON METHODCALL: void main.Runner.delete_status(boolean) TO STATE::> start

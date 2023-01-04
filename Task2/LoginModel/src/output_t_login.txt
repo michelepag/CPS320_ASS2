@@ -1,0 +1,12 @@
+[LoginModelProperty]AUTOMATON::> LoginModelProperty() STATE::>loggedout
+Valid login
+[LoginModelProperty]MOVED ON METHODCALL: void main.Runner.login(boolean) TO STATE::> loggedin
+[LoginModelProperty]AUTOMATON::> LoginModelProperty() STATE::>loggedin
+Successful Logout observed
+[LoginModelProperty]MOVED ON METHODCALL: void main.Runner.log_out(boolean) TO STATE::> loggedout
+[LoginModelProperty]AUTOMATON::> LoginModelProperty() STATE::>loggedout
+Invalid login observed
+[LoginModelProperty]MOVED ON METHODCALL: void main.Runner.login(boolean) TO STATE::> loggedout
+[LoginModelProperty]AUTOMATON::> LoginModelProperty() STATE::>loggedout
+Valid login
+[LoginModelProperty]MOVED ON METHODCALL: void main.Runner.login(boolean) TO STATE::> loggedin

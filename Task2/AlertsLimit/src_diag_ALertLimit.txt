@@ -1,0 +1,13 @@
+digraph _logic_ALertLimit {
+rankdir=LR;
+node [shape = circle]; start;
+node [shape = octagon]; bad_delete too_many;
+node [shape = point]; _s_s;
+_s_s -> start;
+start -> start [ label = "(1) create_alert\\value == false \\; System . out . println ( \" Alert uploaded \" ) ; "];
+start -> too_many [ label = "(2) create_alert\\value == true \\; System . out . println ( \" Too many alerts \" ) ; "];
+start -> start [ label = "(3) delete_alerts\\v == true \\; System . out . println ( \" Delete Alerts \" ) ; "];
+start -> bad_delete [ label = "(4) delete_alerts\\v == false \\; System . out . println ( \" Bad delete \" ) ; "];
+too_many -> bad_delete [ label = "(1) delete_alerts\\v == false \\; System . out . println ( \" Bad delete \" ) ; "];
+too_many -> start [ label = "(2) delete_alerts\\v == true \\; System . out . println ( \" Delete Alerts \" ) ; "];
+}

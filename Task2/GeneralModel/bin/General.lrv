@@ -1,0 +1,55 @@
+GLOBAL {
+	VARIABLES {
+		int badLogins = 0;
+	}
+	
+	EVENTS{
+		invalid_login() = {*.invalid_login()}
+		log_in() = {*.log_in()}
+		log_out() = {*.log_out()}
+		create_alert()={*.create_alert()}
+		delete_alerts()={*.delete_alerts()}
+		view_alerts() = {*.view_alerts()}
+	}
+	
+	PROPERTY GeneralModelProperty{
+		STATES{
+			BAD{
+				error_state
+			}
+			NORMAL{
+				logout
+				alerts_viewed
+				alerts_created
+				alerts_deleted
+			}
+			STARTING{
+				login
+			}
+		}
+		
+		TRANSITIONS{
+			login -> alerts_viewed [view_alerts\\;System.out.println("User viewed alerts");]
+			login -> alerts_created [create_alert\\;System.out.println("Alert created and user is logged in");]
+			login -> alerts_deleted [delete_alerts\\;System.out.println("Alerts deleted and user is logged in");]
+			login -> logout [log_out\\;System.out.println("User logged out");]
+			logout -> login [log_in\\;System.out.println("User logged in");]
+			logout -> alerts_created [create_alert\\;System.out.println("An alert has been uploaded and user is logged out");]
+			logout -> alerts_deleted [delete_alerts\\;System.out.println("Alerts deleted and user is logged out");]
+			alerts_viewed -> logout [log_out\\;System.out.println("User logged out");]
+			alerts_viewed -> alerts_created [create_alert\\;System.out.println("An alert has been uploaded");]
+			alerts_viewed -> alerts_deleted [delete_alerts\\;System.out.println("Alerts deleted");]
+			alerts_viewed -> alerts_viewed [view_alerts\\;System.out.println("User viewed alerts");]
+			alerts_created -> login [log_in\\;System.out.println("User logged in");]
+			alerts_created -> alerts_deleted[delete_alerts\\;System.out.println("Alerts deleted");]
+			alerts_created -> alerts_viewed[view_alerts\\;System.out.println("User viewed alerts");]
+			alerts_created -> alerts_created[create_alert\\;System.out.println("Alerts created");]
+			alerts_created -> logout [log_out\\;System.out.println("User logged out");]
+			alerts_deleted -> login [log_in\\;System.out.println("User logged in");]
+			alerts_deleted -> alerts_deleted[delete_alerts\\;System.out.println("Alerts deleted");]
+			alerts_deleted -> alerts_created[create_alert\\;System.out.println("Alerts created");]
+			alerts_deleted -> logout [log_out\\;System.out.println("User logged out");]
+			alerts_deleted -> alerts_viewed[view_alerts\\;System.out.println("User viewed alerts");]
+		}
+	}
+}

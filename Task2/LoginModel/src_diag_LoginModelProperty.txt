@@ -1,0 +1,11 @@
+digraph _logic_LoginModelProperty {
+rankdir=LR;
+node [shape = circle]; loggedin loggedout;
+node [shape = octagon]; bad_state;
+node [shape = point]; _s_s;
+_s_s -> loggedout;
+loggedin -> loggedout [ label = "(1) log_out\\v == false \\; System . out . println ( \" Successful Logout observed \" ) ; "];
+loggedin -> bad_state [ label = "(2) log_out\\v == true \\; System . out . println ( \" Bad logout observed. \" ) ; "];
+loggedout -> loggedout [ label = "(1) login\\value == false \\; System . out . println ( \" Invalid login observed \" ) ; "];
+loggedout -> loggedin [ label = "(2) login\\value == true \\; System . out . println ( \" Valid login \" ) ; "];
+}

@@ -1,0 +1,23 @@
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>login
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>login
+User viewed alerts
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.view_alerts() TO STATE::> alerts_viewed
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>alerts_viewed
+An alert has been uploaded
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.create_alert() TO STATE::> alerts_created
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>alerts_created
+Alerts created
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.create_alert() TO STATE::> alerts_created
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>alerts_created
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>alerts_created
+User logged out
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.log_out() TO STATE::> logout
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>logout
+Alerts deleted and user is logged out
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.delete_alerts() TO STATE::> alerts_deleted
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>alerts_deleted
+User logged in
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.log_in() TO STATE::> login
+[GeneralModelProperty]AUTOMATON::> GeneralModelProperty() STATE::>login
+User viewed alerts
+[GeneralModelProperty]MOVED ON METHODCALL: void main.EventMaker.view_alerts() TO STATE::> alerts_viewed

@@ -1,0 +1,27 @@
+GLOBAL {
+	EVENTS{
+		login(boolean value) = {*.login(boolean value)}
+		log_out(boolean v) = {*.log_out(boolean v)}
+	}
+	
+	PROPERTY LoginModelProperty{
+		STATES{
+			BAD{
+				bad_state
+			}
+			NORMAL{
+				loggedin
+			}
+			STARTING{
+				loggedout
+			}
+		}
+		
+		TRANSITIONS{
+			loggedout -> loggedout [login\value == false\;System.out.println("Invalid login observed");]
+			loggedout -> loggedin  [login\value==true\;System.out.println("Valid login");]
+		    loggedin -> loggedout  [log_out\v==false\;System.out.println("Successful Logout observed");]
+		    loggedin -> bad_state  [log_out\v==true\;System.out.println("Bad logout observed.");]
+		}
+	}
+}

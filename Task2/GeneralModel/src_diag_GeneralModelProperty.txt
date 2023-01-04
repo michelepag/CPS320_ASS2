@@ -1,0 +1,28 @@
+digraph _logic_GeneralModelProperty {
+rankdir=LR;
+node [shape = circle]; logout alerts_viewed alerts_created alerts_deleted login;
+node [shape = octagon]; error_state;
+node [shape = point]; _s_s;
+_s_s -> login;
+alerts_created -> login [ label = "(1) log_in\\\\; System . out . println ( \" User logged in \" ) ; "];
+alerts_created -> alerts_deleted [ label = "(2) delete_alerts\\\\; System . out . println ( \" Alerts deleted \" ) ; "];
+alerts_created -> alerts_viewed [ label = "(3) view_alerts\\\\; System . out . println ( \" User viewed alerts \" ) ; "];
+alerts_created -> alerts_created [ label = "(4) create_alert\\\\; System . out . println ( \" Alerts created \" ) ; "];
+alerts_created -> logout [ label = "(5) log_out\\\\; System . out . println ( \" User logged out \" ) ; "];
+logout -> login [ label = "(1) log_in\\\\; System . out . println ( \" User logged in \" ) ; "];
+logout -> alerts_created [ label = "(2) create_alert\\\\; System . out . println ( \" An alert has been uploaded and user is logged out \" ) ; "];
+logout -> alerts_deleted [ label = "(3) delete_alerts\\\\; System . out . println ( \" Alerts deleted and user is logged out \" ) ; "];
+login -> alerts_viewed [ label = "(1) view_alerts\\\\; System . out . println ( \" User viewed alerts \" ) ; "];
+login -> alerts_created [ label = "(2) create_alert\\\\; System . out . println ( \" Alert created and user is logged in \" ) ; "];
+login -> alerts_deleted [ label = "(3) delete_alerts\\\\; System . out . println ( \" Alerts deleted and user is logged in \" ) ; "];
+login -> logout [ label = "(4) log_out\\\\; System . out . println ( \" User logged out \" ) ; "];
+alerts_deleted -> login [ label = "(1) log_in\\\\; System . out . println ( \" User logged in \" ) ; "];
+alerts_deleted -> alerts_deleted [ label = "(2) delete_alerts\\\\; System . out . println ( \" Alerts deleted \" ) ; "];
+alerts_deleted -> alerts_created [ label = "(3) create_alert\\\\; System . out . println ( \" Alerts created \" ) ; "];
+alerts_deleted -> logout [ label = "(4) log_out\\\\; System . out . println ( \" User logged out \" ) ; "];
+alerts_deleted -> alerts_viewed [ label = "(5) view_alerts\\\\; System . out . println ( \" User viewed alerts \" ) ; "];
+alerts_viewed -> logout [ label = "(1) log_out\\\\; System . out . println ( \" User logged out \" ) ; "];
+alerts_viewed -> alerts_created [ label = "(2) create_alert\\\\; System . out . println ( \" An alert has been uploaded \" ) ; "];
+alerts_viewed -> alerts_deleted [ label = "(3) delete_alerts\\\\; System . out . println ( \" Alerts deleted \" ) ; "];
+alerts_viewed -> alerts_viewed [ label = "(4) view_alerts\\\\; System . out . println ( \" User viewed alerts \" ) ; "];
+}
